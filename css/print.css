@@ -1,0 +1,22 @@
+@media print{
+  :root{--ink:#000}
+  body{background:#fff;color:#000}
+  header,nav,main>section:not(#cards),.noprint,#fx,#opening,#showExit{display:none!important}
+  main{padding:0;max-width:none}
+  #cards{display:block!important}
+  #cards .box{display:none}
+  @page{margin:1cm}
+
+  /* lưới: nhiều thẻ một trang */
+  .cards-grid{grid-template-columns:repeat(2,7.6cm);gap:.55cm;justify-items:start}
+  .cards-grid .cap{color:#000;font-size:11px}
+  .cards-grid .card{box-shadow:none}
+
+  /* một thẻ mỗi trang: mỗi thẻ chiếm trọn một trang A4 */
+  .cards-page{display:block}
+  .cardpage{width:auto;box-shadow:none;border-radius:0;padding:0;
+    height:25.4cm;justify-content:center;
+    page-break-after:always;break-after:page}
+  .cardpage:last-child{page-break-after:auto;break-after:auto}
+  .card.big{border-color:#000}
+}
